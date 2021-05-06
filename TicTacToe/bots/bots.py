@@ -57,13 +57,17 @@ class Minimax_Bot(player.Player):
             board.undo()
 
         # Work out the best moves and randomly choose ones
-        best_move = max(moves_dict, key=moves_dict.get)
-        best_moves = []
-        for position in moves_dict.keys():
-            if moves_dict[position] >= moves_dict[best_move]:
-                best_moves.append(position)
+        best_positions = sorted(moves_dict, key=moves_dict.get, reverse=True)
+        best_value = moves_dict[best_positions[0]]
 
-        print(moves_dict)
+        best_moves = []
+        for position in best_positions:
+            if moves_dict[position] >= best_value:
+                best_moves.append(position)
+            else:
+                break
+
+        # print(moves_dict)
         # print(best_moves)
         return choice(best_moves)
 
