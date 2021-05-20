@@ -20,6 +20,12 @@ game.run()
 # Starts a game with one bot playing random moves and the other using the minimax algorithm
 ```
 
+This is also illustrated in `Tests/basic_test.py`
+```bash
+python it_works.py
+# Runs the above example
+```
+
 ## License
 
 me no know
